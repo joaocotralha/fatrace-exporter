@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python AS build
 
 RUN pip install --no-cache-dir prometheus_client
 
