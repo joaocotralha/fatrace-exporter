@@ -1,0 +1,11 @@
+version: "3"
+services:
+  fatrace-exporter:
+    image: fatrace-exporter:latest
+    container_name: python_container
+    ports:
+      - 8123:8123
+    volumes:
+      # target directory for monitoring
+      - ${TARGET_DIRECTORY}:/mount
+    restart: always
