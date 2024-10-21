@@ -9,26 +9,7 @@ The exporter exposes two metrics:
 
 These metrics are exposed in port `8123`
 
-
-
-
-## Standalone
-
-Install prometheus_client 
-```sh
-pip install prometheus_client
-```
-
-Run exporter in target directory for monitoring
-```sh
-cd /target/directory && sudo python exporter.py
-```
-
 ## Docker
-Build docker image
-```sh
-docker build -t fatrace-exporter:latest .
-```
 
 Replace `${TARGET_DIRECTORY}` in `docker-compose.yml` with the path for the target directory to monitor.
 
@@ -37,8 +18,22 @@ Run docker compose
 docker compose up -d
 ```
 
+Build docker image (for custom implementation)
+```sh
+docker build .
+```
 
+## Standalone
 
+Install `prometheus_client` python package
+```sh
+pip install prometheus_client
+```
+
+Run exporter in target directory for monitoring
+```sh
+cd /target/directory && sudo python exporter.py
+```
 
 
 ## Acknowledgements
