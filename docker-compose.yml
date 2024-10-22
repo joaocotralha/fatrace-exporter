@@ -1,9 +1,10 @@
 services:
   fatrace-exporter:
+    container_name: fatrace-exporter
     image: ghcr.io/joaocotralha/fatrace-exporter:main
     ports:
       - 8123:8123
     volumes:
-      # target directory for monitoring
-      - ${TARGET_DIRECTORY}:/mount
+      - ${TARGET_DIRECTORY}:/mount:rw # target directory for monitoring
     restart: always
+    privileged: true
